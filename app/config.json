@@ -1,0 +1,362 @@
+{
+  "question": "Is the person conscious?",
+  "id": "conscious",
+  "answers": [
+    {
+      "answer": "Yes",
+      "next": {
+        "question": "Check his vitals. Are any of his vitals abnormal?",
+        "id": "vitals-conscious",
+        "answers": [
+          {
+            "answer": "Yes",
+            "next": {
+              "question": "Which of his vitals is the most abnormal?",
+              "answers": [
+                {
+                  "answer": "Pulse",
+                  "next": {
+                    "question": "Call for a paramedic / advanced paramedic. There's not much you can do. Move on to the next problem.",
+                    "answers": [
+                      {
+                        "answer": "Ok",
+                        "next": "vitals-conscious"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "Blood pressure",
+                  "next": {
+                    "question": "Do they have a visible bleed?",
+                    "answers": [
+                      {
+                        "answer": "Yes",
+                        "next": {
+                          "question": "Use gauze, bandages and/or a tourniquet if on arm or leg. Does the bleeding stop?",
+                          "answers": [
+                            {
+                              "answer": "Yes",
+                              "next": {
+                                "question": "Great! Move on to the next problem.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "vitals-conscious"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "answer": "No",
+                              "next": {
+                                "question": "Call for an advanced paramedic or HEMS, they have other options. Move on to the next problem.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "vitals-conscious"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "answer": "No",
+                        "next": {
+                          "question": "Call for an advanced paramedic or HEMS, could be an internal bleed. Move on to the next problem.",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": "vitals-conscious"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "Respiration Rate or SPo2",
+                  "next": {
+                    "question": "Is their airway clear?",
+                    "answers": [
+                      {
+                        "answer": "Yes",
+                        "next": {
+                          "question": "Oxygen through a non-rebreather mask at 15L/min. Move on to the next problem.",
+                          "id": "oxygen-conscious",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": "vitals-conscious"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "answer": "No",
+                        "next": {
+                          "question": "Try to clear their airway with suction. Does it work?",
+                          "answers": [
+                            {
+                              "answer": "Yes",
+                              "next": "oxygen-conscious"
+                            },
+                            {
+                              "answer": "No",
+                              "next": {
+                                "question": "Try to use an OPA, NPA or iGel to restore their airway. Does it work?",
+                                "answers": [
+                                  {
+                                    "answer": "Yes",
+                                    "next": "oxygen-conscious"
+                                  },
+                                  {
+                                    "answer": "No",
+                                    "next": {
+                                      "question": "Call for an advanced paramedic or HEMS. Move on to the next problem.",
+                                      "answers": [
+                                        {
+                                          "answer": "Ok",
+                                          "next": "vitals-conscious"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "answer": "No",
+            "next": {
+              "question": "Perform a head to toe exam. Ask any witnesses what happened. Are there any injuries?",
+              "answers": [
+                {
+                  "answer": "Yes",
+                  "next": {
+                    "question": "Offer pain relief by getting them to rate their pain on a scale of 1-10. Low: Entonox, Mid: Paracetamol, High: Morphine (if paramedic).",
+                    "answers": [
+                      {
+                        "answer": "Ok",
+                        "next": {
+                          "question": "Treat their injuries (box splints for closed breaks, bandages/gauze/plasters for cuts, wound packing for stab wounds/GSWs). For other injuries, consider calling for an advanced paramedic.",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": {
+                                "question": "Transport patient to hospital once treatment is complete, or hand over to AP/HEMS if required.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "done"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "No",
+                  "next": "done"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "answer": "No",
+      "next": {
+        "question": "Check his vitals. Are any of his vitals abnormal?",
+        "id": "vitals-unconscious",
+        "answers": [
+          {
+            "answer": "Yes",
+            "next": {
+              "question": "Which of his vitals is the most abnormal?",
+              "answers": [
+                {
+                  "answer": "Pulse",
+                  "next": {
+                    "question": "If the HR is 0, start CPR and prepare the defib. The patient is critical, and time is essential. Call for a paramedic / advanced paramedic, and if pulse is 0, keep up CPR and/or administer up to 3 shocks at 120, 240 and 360 Joules if there's a shockable rhythm.",
+                    "answers": [
+                      {
+                        "answer": "Ok",
+                        "next": "vitals-unconscious"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "Blood pressure",
+                  "next": {
+                    "question": "Do they have a visible bleed?",
+                    "answers": [
+                      {
+                        "answer": "Yes",
+                        "next": {
+                          "question": "Use gauze, bandages and/or a tourniquet if on arm or leg. Does the bleeding stop?",
+                          "answers": [
+                            {
+                              "answer": "Yes",
+                              "next": {
+                                "question": "Great! Move on to the next problem.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "vitals-unconscious"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "answer": "No",
+                              "next": {
+                                "question": "Call for an advanced paramedic or HEMS, they have other options. Move on to the next problem.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "vitals-unconscious"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "answer": "No",
+                        "next": {
+                          "question": "Call for an advanced paramedic or HEMS, could be an internal bleed. Move on to the next problem.",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": "vitals-unconscious"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "Respiration Rate or SPo2",
+                  "next": {
+                    "question": "Is their airway clear?",
+                    "answers": [
+                      {
+                        "answer": "Yes",
+                        "next": {
+                          "question": "Oxygen through a non-rebreather mask at 15L/min. Move on to the next problem.",
+                          "id": "oxygen-unconscious",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": "vitals-unconscious"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "answer": "No",
+                        "next": {
+                          "question": "Try to clear their airway with suction. Does it work?",
+                          "answers": [
+                            {
+                              "answer": "Yes",
+                              "next": "oxygen-unconscious"
+                            },
+                            {
+                              "answer": "No",
+                              "next": {
+                                "question": "Try to use an OPA, NPA or iGel to restore their airway. Does it work?",
+                                "answers": [
+                                  {
+                                    "answer": "Yes",
+                                    "next": "oxygen-unconscious"
+                                  },
+                                  {
+                                    "answer": "No",
+                                    "next": {
+                                      "question": "Call for an advanced paramedic or HEMS. Move on to the next problem.",
+                                      "answers": [
+                                        {
+                                          "answer": "Ok",
+                                          "next": "vitals-unconscious"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "answer": "No",
+            "next": {
+              "question": "Perform a head to toe exam. Ask any witnesses what happened. Are there any injuries?",
+              "answers": [
+                {
+                  "answer": "Yes",
+                  "next": {
+                    "question": "Offer pain relief by getting them to rate their pain on a scale of 1-10. Low: Entonox, Mid: Paracetamol, High: Morphine (if paramedic).",
+                    "answers": [
+                      {
+                        "answer": "Ok",
+                        "next": {
+                          "question": "Treat their injuries (box splints for closed breaks, bandages/gauze/plasters for cuts, wound packing for stab wounds/GSWs). For other injuries, consider calling for an advanced paramedic.",
+                          "answers": [
+                            {
+                              "answer": "Ok",
+                              "next": {
+                                "question": "Transport patient to hospital once treatment is complete. Consider using a C-Collar and a spinal board if you suspect any neck or spinal injuries. Hand over to AP/HEMS if needed.",
+                                "answers": [
+                                  {
+                                    "answer": "Ok",
+                                    "next": "done"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "answer": "No",
+                  "next": "done"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
